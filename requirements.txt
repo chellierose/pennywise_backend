@@ -126,6 +126,7 @@ python-jose==3.4.0
 python-json-logger==2.0.7
 python-multipart==0.0.20
 pytz==2024.2
+pywin32==305
 pywinpty==2.0.14
 PyYAML==6.0.2
 pyzbar==0.1.9

@@ -2,7 +2,11 @@ services:
   - type: web
     name: pennywise-backend
     runtime: python
-    pythonVersion: 3.11
     envVars:
-      - key: PORT
-        value: 8000
+      - key: PYTHON_VERSION
+        value: 3.11  # Adjust to match your Render Python version
+    buildCommand: |
+      curl https://sh.rustup.rs -sSf | sh -s -- -y
+      export PATH="$HOME/.cargo/bin:$PATH"
+      pip install --no-cache-dir -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 8000
